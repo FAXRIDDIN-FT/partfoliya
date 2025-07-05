@@ -11,3 +11,11 @@ export interface IGenre {
     id: number,
     name: string
 }
+export interface PersonData {
+  name: string;
+  birthday: string;
+  place_of_birth: string;
+  known_for_department: string;
+  profile_path?: string;
+  biography?: string;
+}   

@@ -57,7 +57,7 @@ const Header = () => {
                             Showtimes
                         </NavLink>
                         <NavLink
-                            to="/tickets"
+                            to="/wishlist"
                             className={({ isActive }) =>
                                 `text-sm font-medium transition-colors duration-200 hover:text-red-400 ${
                                     isActive ? "text-red-500" : "text-gray-700 dark:text-gray-300"
@@ -153,7 +153,7 @@ const Header = () => {
                                 Showtimes
                             </NavLink>
                             <NavLink
-                                to="/tickets"
+                                to="/wishlist"
                                 className={({ isActive }) =>
                                     `block px-3 py-2 text-base font-medium transition-colors duration-200 rounded-lg ${
                                         isActive

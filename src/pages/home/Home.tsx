@@ -57,6 +57,7 @@ const Home = () => {
                 className="bg-center"
                 src={IMAGE_URL + movie.backdrop_path}
                 alt={movie.title || 'Movie poster'}
+                
               />
             </SwiperSlide>
           ))}
@@ -69,10 +70,10 @@ const Home = () => {
           freeMode={true}
           watchSlidesProgress={true}
           modules={[FreeMode, Navigation, Thumbs]}
-          className="mySwiper"
+          className="mySwiper max-w-[800px]"
         >
           {data?.results?.map((movie: IMovie) => (
-            <SwiperSlide key={movie.id + '_thumb'}>
+            <SwiperSlide key={movie.id + '_thumb'} className='cursor-pointer '>
               <img
                 className="object-cover bg-center"
                 src={IMAGE_URL + movie.backdrop_path}
