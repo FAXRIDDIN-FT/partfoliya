@@ -53,12 +53,18 @@ const Home = () => {
         >
           {data?.results?.map((movie: IMovie) => (
             <SwiperSlide key={movie.id}>
-              <img
-                className="bg-center"
-                src={IMAGE_URL + movie.backdrop_path}
-                alt={movie.title || 'Movie poster'}
-                
-              />
+              <div className="relative w-full h-full">
+                <img
+                  className="w-full h-full object-cover rounded-[12px]"
+                  src={IMAGE_URL + movie.backdrop_path}
+                  alt={movie.title || 'Movie poster'}
+                />
+                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black to-transparent rounded-b-[12px]" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-4xl font-semibold ">{movie.title}</h3>
+                  <p className="text-stone-200">{new Date(movie.release_date).getFullYear()}</p>
+                </div>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -73,12 +79,15 @@ const Home = () => {
           className="mySwiper max-w-[800px]"
         >
           {data?.results?.map((movie: IMovie) => (
-            <SwiperSlide key={movie.id + '_thumb'} className='cursor-pointer '>
-              <img
-                className="object-cover bg-center"
-                src={IMAGE_URL + movie.backdrop_path}
-                alt={movie.title || 'Movie poster'}
-              />
+            <SwiperSlide key={movie.id + '_thumb'} className="cursor-pointer">
+              <div className="relative">
+                <img
+                  className="object-cover bg-center w-full h-[120px] rounded-md"
+                  src={IMAGE_URL + movie.backdrop_path}
+                  alt={movie.title || 'Movie poster'}
+                />
+            
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>

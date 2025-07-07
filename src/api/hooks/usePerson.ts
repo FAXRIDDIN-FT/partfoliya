@@ -16,6 +16,6 @@ export const usePerson = () => {
     console.log(getMovieSingle);
     
 
-  return {getPersonSingle , getMovieSingle}; 
+  return {getPersonSingle , getMovieSingle};
 };
 
